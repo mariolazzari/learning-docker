@@ -42,4 +42,42 @@ Docker uses images and container to deploy applications consistently.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install --cask docker
 docker run --rm hello-world # remove container after execution 
+docker ps
 ```
+
+## Using Docker
+
+### Docker Cli
+
+```sh
+# show all docker commands
+docker --help 
+# show all command options
+docker network --help
+# show all option values
+docker network create --help
+```
+
+#### Create container
+
+```sh
+# long way
+docker container create --help
+# creates but does not run
+docker container create hello-world:linux 
+# show running containers only
+docker ps
+# show all containers
+docker ps --all
+docker ps -a
+# start container
+docker container start CONTAINER_ID
+# show container logs
+docker container logs CONTAINER_ID
+# attach termonal to container
+docker container start --attach CONTAINER_ID
+
+# short way: docker run = create + start + attach
+
+```
+
