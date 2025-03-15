@@ -105,3 +105,25 @@ ENTRYPOINT [ "/entrypoint.bash" ]
 docker build -t first-image .
 docker run first-image
 ```
+
+#### Container interactions
+
+```sh
+docker build --file server.Dockerfile --tag first-server .
+# detach container
+docker run -d first-server
+# exec command in container
+docker exec ID date
+# interact with container
+docker exec -it ID bash
+# stop containr
+docker stop ID
+# remove container
+docker rm ID
+# show images
+docker images
+# remove image
+docker rmi ID
+```
+
+#### Binding ports
