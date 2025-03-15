@@ -126,4 +126,16 @@ docker images
 docker rmi ID
 ```
 
-#### Binding ports
+#### Binding ports & name
+
+```sh
+docker build --file web-server.Dockerfile --tag web-server .
+docker run -d --name web-server -p 5001:5000 web-server 
+```
+
+#### Container data
+
+```sh
+
+```
+
