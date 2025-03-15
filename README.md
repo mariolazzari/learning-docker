@@ -78,6 +78,30 @@ docker container logs CONTAINER_ID
 docker container start --attach CONTAINER_ID
 
 # short way: docker run = create + start + attach
-
+docker run hello-world
 ```
 
+#### Dockerfile
+
+```
+FROM ubuntu
+
+LABEL maintainer="Carlos Nunez <dev@carlosnunez.me>"
+
+USER root
+
+COPY ./entrypoint.bash /
+
+RUN apt -y update
+RUN apt -y install curl bash
+RUN chmod 755 /entrypoint.bash
+
+USER nobody
+
+ENTRYPOINT [ "/entrypoint.bash" ]
+```
+
+```sh
+docker build -t first-image .
+docker run first-image
+```
