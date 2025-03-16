@@ -166,3 +166,17 @@ docker rmi ID
 # remove all
 docker system prune
 ```
+
+### Slow container
+
+```sh
+# container stats
+docker stats CONTAINER_ID
+# ex
+docker run --name=alpine --entrypoint=sleep -d alpine infinity
+docker exec -it alpine sh
+yes
+# inspect
+docker inspect CONTAINER_ID
+docker top CONTAINER_ID
+```
