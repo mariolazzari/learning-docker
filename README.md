@@ -180,3 +180,23 @@ yes
 docker inspect CONTAINER_ID
 docker top CONTAINER_ID
 ```
+
+## Additional info
+
+### Best practices
+
+- use official images
+- avoid *latest* tag
+- use non root user
+  
+### Docker compose
+
+Use multiple conteiners and link them.
+
+```sh
+docker compose up
+```
+
+### Kubernetes
+
+Creates, move and scale containers between nodes.
