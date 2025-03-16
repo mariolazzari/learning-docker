@@ -133,9 +133,36 @@ docker build --file web-server.Dockerfile --tag web-server .
 docker run -d --name web-server -p 5001:5000 web-server 
 ```
 
-#### Container data
+#### Container data: volumes
 
 ```sh
-
+docker run --rm --entrypoint sh -v /tmp/container:/tmp ubuntu -c "echo 'Ciao Mario' >/tmp/file && cat /tmp/file"
 ```
 
+### Docker Hub
+
+```sh
+# tag image
+docker tag web-server mariolazzari/web-server:0.0.1
+# push image to docker hub
+docker push mariolazzari/web-server:0.0.1
+```
+
+#### Challenge
+
+```sh
+docker run --name webserver -v ./website:/usr/share/nginx/html -p 5000:80 --rm nginx
+```
+
+## When something goes wrong
+
+### Out of space
+
+```sh
+# show all images
+docker images
+# remove image
+docker rmi ID
+# remove all
+docker system prune
+```
